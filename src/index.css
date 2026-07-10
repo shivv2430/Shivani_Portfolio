@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #7C3AED;
+  --color-secondary: #06B6D4;
+  --color-accent: #00FFB3;
+  --color-dark: #101828;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+@layer base {
+  :root {
+    --glass-bg: rgba(16, 24, 40, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1);
+  }
+
+  body {
+    @apply bg-dark text-white font-sans overflow-hidden antialiased;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+  
+  .neon-text-primary {
+    text-shadow: 0 0 10px #7C3AED, 0 0 20px #7C3AED;
+  }
+  
+  .neon-text-accent {
+    text-shadow: 0 0 10px #00FFB3, 0 0 20px #00FFB3;
+  }
+}
+
+/* Canvas container */
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
