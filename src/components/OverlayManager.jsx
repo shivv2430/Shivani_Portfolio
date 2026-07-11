@@ -5,6 +5,7 @@ import { X } from 'lucide-react'
 
 // Placeholder UIs
 import AboutUI from './AboutUI'
+import AIAssistantUI from './AIAssistantUI'
 
 export default function OverlayManager() {
   const activeSection = useStore((state) => state.activeSection)
@@ -32,6 +33,7 @@ export default function OverlayManager() {
             </div>
 
             <div className="flex-1 overflow-y-auto p-6">
+              {activeSection === 'ai_assistant' && <AIAssistantUI />}
               {activeSection === 'about' && <AboutUI />}
               {activeSection === 'skills' && <div className="text-red-300 text-center mt-20"> <span className='text-red-600 text-center mt-20 text-2xl'>Skills :</span> <br />  <br /> HTML <br /> <br /> CSS <br /> <br />JavaScript <br /> <br />React (beginner) <br /> <br />C++  <br /> <br />Git/GitHub <br /> <br /> Responsive web development  <br /> <br /> Open-source contribution <br /> <br /> Technical content creation  </div>}
               {activeSection === 'projects' && <div className="text-yellow-300 text-center mt-20"> <span className='text-yellow-600 text-center mt-20 text-2xl'> Projects : </span> <br /> <br /> Stranger Things(First project): https://shivv2430.github.io/StrangerThings/ <br /> <br /> Microsoft Learning Hub : https://shivv2430.github.io/Microsoft-Learning-Hub/ <br /><br /> IngreChef <br /><br /> Weather App <br /><br />counter <br /><br /> Age Calculator <br /><br /> Password Generator <br /><br />To-Do List <br /><br /> Calculator <br /><br /> </div>}
